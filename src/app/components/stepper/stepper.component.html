@@ -1,0 +1,24 @@
+<div class="stepper">
+  <div class="step" *ngFor="let step of steps; let i = index">
+    <div
+      class="step-box"
+      [ngClass]="{
+        active: i <= activeIndex,
+        inactive: i > activeIndex,
+      }"
+    >
+      {{ i + 1 }}
+    </div>
+
+    <div class="label">{{ step.label }}</div>
+
+    <div
+      class="line"
+      *ngIf="i < steps.length - 1"
+      [ngClass]="{
+        'active-line': i < activeIndex,
+        'inactive-line': i >= activeIndex,
+      }"
+    ></div>
+  </div>
+</div>

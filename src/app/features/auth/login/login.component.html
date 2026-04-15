@@ -1,0 +1,13 @@
+<div>
+    <div class="header">LOGIN</div>
+    <p-card class="form-card">
+        <p>Please enter the case sensitive password from your official invitation.</p>
+        <div class="field">
+            <label><b>Password:</b></label>
+            <input [(ngModel)]="password" pInputText type="password" />
+        </div>
+        <div class="button-holder">
+            <button pButton label="Login" (click)="login()"></button> 
+        </div>
+    </p-card>
+</div>

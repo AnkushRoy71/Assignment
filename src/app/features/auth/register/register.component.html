@@ -1,0 +1,77 @@
+<div class="register-container">
+  <div class="header">{{ headers[activeIndex] }}</div>
+
+  <div class="steps-container">
+      <div class="steps">
+        <app-stepper [steps]="steps" [activeIndex]="activeIndex"></app-stepper>
+      </div>
+  </div>
+
+  <p-card *ngIf="!registrationDone" class="form-card" [formGroup]="registerForm">
+    <p>Please fill in the following required information.</p>
+
+    <div class="field">
+      <label>First Name: *</label>
+      <input
+        pInputText
+        formControlName="firstName"
+        [ngClass]="{ invalid: isInvalid('firstName') }"
+      />
+    </div>
+
+    <div class="field">
+      <label>Last Name: *</label>
+      <input
+        pInputText
+        formControlName="lastName"
+        [ngClass]="{ invalid: isInvalid('lastName') }"
+      />
+    </div>
+
+    <div class="field">
+      <label>State: *</label>
+      <p-dropdown
+        [options]="states"
+        formControlName="state"
+        placeholder="Select State"
+        [ngClass]="{ invalid: isInvalid('state') }"
+      ></p-dropdown>
+    </div>
+
+    <p class="info-text">
+      Please provide your email address. All meeting correspondence will be sent
+      via email.
+    </p>
+
+    <div class="field">
+      <label>Email: *</label>
+      <input
+        pInputText
+        formControlName="email"
+        [ngClass]="{ invalid: isInvalid('email') }"
+      />
+    </div>
+
+    <div class="field">
+      <label>Confirm Email: *</label>
+      <input
+        pInputText
+        formControlName="confirmEmail"
+        [ngClass]="{ invalid: isInvalid('confirmEmail') }"
+      />
+    </div>
+
+    <div class="field-checkbox">
+      <p-checkbox formControlName="subscribe" binary="true"></p-checkbox>
+      <label>Subscribe to Newsletter</label>
+    </div>
+
+    <div class="button-holder">
+      <button pButton label="Continue" (click)="submit()"></button>
+    </div>
+  </p-card>
+  <p-card *ngIf="registrationDone" class="form-card">
+    <b>Thank you for registering!</b>
+    <p>You should receive a confirmation email momentarily containing additional details.</p>
+  </p-card>
+</div>
