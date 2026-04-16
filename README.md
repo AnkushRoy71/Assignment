@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+This Responsive Application is developed in Angular 17 with Primeng as the UI Component library
+
+there are 2 paths for this small application
+/login
+/register
+
+since there are no routerlink added we need to manually change the route to test

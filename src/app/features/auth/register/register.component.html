@@ -7,7 +7,7 @@
       </div>
   </div>
 
-  <p-card *ngIf="!registrationDone" class="form-card" [formGroup]="registerForm">
+  <p-card *ngIf="activeIndex === 1" class="form-card" [formGroup]="registerForm">
     <p>Please fill in the following required information.</p>
 
     <div class="field">
@@ -70,7 +70,7 @@
       <button pButton label="Continue" (click)="submit()"></button>
     </div>
   </p-card>
-  <p-card *ngIf="registrationDone" class="form-card">
+  <p-card *ngIf="activeIndex === 2" class="form-card">
     <b>Thank you for registering!</b>
     <p>You should receive a confirmation email momentarily containing additional details.</p>
   </p-card>
