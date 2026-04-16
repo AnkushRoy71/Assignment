@@ -18,13 +18,6 @@
     display: block;
 }
 
-
-.field {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
 .field-checkbox {
     margin-bottom: 15px;
     display: flex;
@@ -32,24 +25,9 @@
     gap: 5px;
 }
 
-label {
-    color: #555555;
-    font-size: 14px;
-}
-
-input,
-.p-dropdown {
-    padding: 6px;
-}
-
 .info-text {
     color: #555555;
     font-size: 12px;
-}
-
-.invalid {
-    border: 1px solid #a93a44 !important;
-    background: #ffe8e0 !important;
 }
 
 .button-holder{

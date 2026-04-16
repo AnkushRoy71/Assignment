@@ -15,27 +15,6 @@
     display: block;
 }
 
-
-.field {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-label {
-    color: #555555;
-    font-size: 14px;
-}
-
-input,
-.p-dropdown {
-    padding: 6px;
-}
-
-.invalid {
-    border: 1px solid #a93a44 !important;
-    background: #ffe8e0 !important;
-}
-
 .button-holder {
     display: flex;
     justify-content: flex-end;
