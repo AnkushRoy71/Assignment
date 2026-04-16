@@ -41,7 +41,7 @@ export class RegisterComponent {
   ];
 
   states = [
-    { label: 'Select State', value: null },
+    { label: 'Select State', value: '' },
     { label: 'West Bengal', value: 'WB' },
     { label: 'Maharashtra', value: 'MH' },
   ];
@@ -73,10 +73,26 @@ export class RegisterComponent {
       nonNullable: true,
     }),
     subscribe: new FormControl(false, {
-      validators: Validators.required,
       nonNullable: true,
     }),
-  });
+  },{
+  validators: (group) => {    const email = group.get('email')?.value;
+    const confirmEmail = group.get('confirmEmail')?.value;
+    if (email !== confirmEmail) {
+      group.get('confirmEmail')?.setErrors({ emailMismatch: true });
+    } else {
+      const errors = group.get('confirmEmail')?.errors;
+      if (errors) {
+        delete errors['emailMismatch'];
+        group
+          .get('confirmEmail')
+          ?.setErrors(Object.keys(errors).length ? errors : null);
+      }
+    }
+    return null;
+  }
+}
+);
 
   constructor(
     private fb: FormBuilder,
@@ -89,6 +105,7 @@ export class RegisterComponent {
       return;
     } else {
       const { confirmEmail, ...registerData } = this.registerForm.value;
+      // Note* I didn't unsubscribe the observable since http observables complete after emitting the response, so there is no risk of memory leaks in this case.
       this.authService
         .registerUser(registerData as RegisterRequestModel)
         .subscribe({
