@@ -1,0 +1,21 @@
+.header-logo {
+    background-color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+
+    img {
+        width: 100px;
+        height: 40px;
+        margin: 5px;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #aaaaaa;
+    color: #555555;
+    text-align: center;
+}

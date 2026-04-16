@@ -9,10 +9,8 @@ import { CommonModule } from '@angular/common';
 import { StepperComponent } from '../../../components/stepper/stepper.component';
 import { RegisterFormModel, RegisterRequestModel } from '../../../models/auth.model';
 import { AuthserviceService } from '../../../services/authservice.service';
+import { FormControls } from '../../../types/form-control.type';
 
-type FormControls<T> ={
-  [key in keyof T]: FormControl<T[key]>
-}
 
 @Component({
   selector: 'app-register',
