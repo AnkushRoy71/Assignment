@@ -32,4 +32,4 @@ there are 2 paths for this small application
 /login
 /register
 
-since there are no routerlink added we need to manually change the route to test
+No AuthGuard implemented
